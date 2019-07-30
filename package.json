@@ -1,0 +1,70 @@
+{
+  "name": "@liquid-labs/liquid-dev-cloudsql",
+  "version": "1.0.0-prototype.0",
+  "description": "Google CloudSQL management scripts supporting Liquid Development.",
+  "bin": {
+    "cloud-sql-proxy.sh": "./bin/cloud-sql-proxy.sh",
+    "cloud-sql-service.sh": "./bin/cloud-sql-service.sh"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Liquid-Labs/liquid-dev-cloudsql.git"
+  },
+  "author": "Zane Rockenbaugh <zane@liquid-labs.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Liquid-Labs/liquid-dev-cloudsql/issues"
+  },
+  "homepage": "https://github.com/Liquid-Labs/liquid-dev-cloudsql#readme",
+  "catalyst": {
+    "provides": [
+      {
+        "name": "cloud-sql-service",
+        "interface-classes": [
+          "sql"
+        ],
+        "platform-types": [
+          "local",
+          "gcp"
+        ],
+        "purposes": [
+          "dev",
+          "test",
+          "pre-production",
+          "production"
+        ],
+        "ctrl-scripts": [
+          "cloud-sql-proxy.sh",
+          "cloud-sql-service.sh"
+        ],
+        "params-req": [
+          "GCP_PROJECT_ID",
+          "CLOUDSQL_INSTANCE_NAME",
+          "CLOUDSQL_CONNECTION_PROT",
+          "CLOUDSQL_CONNECTION_NAME",
+          "CLOUDSQL_PROXY_CONNECTION_NAME",
+          "CLOUDSQL_SERVICE_ACCT",
+          "CLOUDSQL_USER",
+          "CLOUDSQL_PASSWORD",
+          "CLOUDSQL_DB"
+        ],
+        "params-opt": [],
+        "config-const": {}
+      }
+    ],
+    "requires": [
+      {
+        "iface": "sql",
+        "params-req": [],
+        "params-opt": [],
+        "config-const": []
+      }
+    ]
+  },
+  "dependencies": {
+    "@liquid-labs/cloud-sql-proxy": "^1.0.0-alpha.0"
+  }
+}
