@@ -1,6 +1,8 @@
 # Liquid Development : CloudSQL
 
-Google CloudSQL management scripts supporting Liquid Development.
+Google CloudSQL management scripts for Liquid Dev projects.
+
+TODO: link to Liquid Dev.
 
 ## Usage
 
